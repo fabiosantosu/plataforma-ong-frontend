@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Projetos - ONG Coração Solidário</title>
     <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <picture>
-    <source srcset="imagens/logo-ong.webp" type="image/webp">
-
-    <img src="imagens/logo-ong.png" alt="Logo ONG" width="200">
+            <source srcset="imagens/logo-ong.webp" type="image/webp">
+            <img src="imagens/logo-ong.png" alt="Logo ONG" width="200">
         </picture>
         <nav>
             <ul>
@@ -20,6 +23,7 @@
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Participe</a></li>
             </ul>
+            <button class="menu-hamburguer">☰</button>
         </nav>
     </header>
 
@@ -29,24 +33,33 @@
             <p>Cada projeto é uma semente de esperança que plantamos na comunidade. Veja como estamos fazendo a diferença e como você pode fazer parte disso.</p>
         </section>
 
-        <article>
-            <h2>Projeto "Educação para Todos"</h2>
-            <picture>
-    <source srcset="imagens/projeto-educacao.webp" type="image/webp">
-    <img src="imagens/projeto-educacao.jpg" alt="Crianças sorrindo e estudando">
-            </picture>
-            <p>Oferecemos reforço escolar, oficinas de leitura e atividades culturais para mais de 100 crianças, garantindo que tenham as ferramentas para um futuro brilhante.</p>
-        </article>
+        <div class="container">
+            <div class="grid">
+                
+                <div class="col-4 col-md-6 col-sm-12">
+                    <article class="project-card">
+                        <h2>Projeto "Educação para Todos"</h2>
+                        <picture>
+                            <source srcset="imagens/projeto-educacao.webp" type="image/webp">
+                            <img src="imagens/projeto-educacao.jpg" alt="Crianças sorrindo e estudando">
+                        </picture>
+                        <p>Oferecemos reforço escolar, oficinas de leitura e atividades culturais para mais de 100 crianças, garantindo que tenham as ferramentas para um futuro brilhante.</p>
+                    </article>
+                </div>
 
-        <article>
-            <h2>Projeto "Prato Cheio"</h2>
-            <picture>
-    <source srcset="imagens/projeto-alimentos.webp" type="image/webp">
-    <img src="imagens/projeto-alimentos.jpg" alt="Crianças sorrindo e estudando">
-            </picture>
-            <p>Arrecadamos e distribuímos cestas básicas mensalmente para famílias em situação de insegurança alimentar. Sua doação garante o alimento na mesa de quem mais precisa.</p>
-        </article>
+                <div class="col-4">
+                    <article class="project-card">
+                        <h2>Projeto "Prato Cheio"</h2>
+                        <picture>
+                            <source srcset="imagens/projeto-alimentos.webp" type="image/webp">
+                            <img src="imagens/projeto-alimentos.jpg" alt="Voluntários distribuindo alimentos">
+                        </picture>
+                        <p>Arrecadamos e distribuímos cestas básicas mensalmente para famílias em situação de insegurança alimentar. Sua doação garante o alimento na mesa de quem mais precisa.</p>
+                    </article>
+                </div>
 
+            </div>
+        </div>
         <section>
             <h2>Como Ajudar?</h2>
             <h3>Seja um Voluntário</h3>

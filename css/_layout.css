@@ -1,0 +1,80 @@
+/* css/_layout.css */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 0;
+}
+
+/* Sistema de Grid de 12 Colunas com Flexbox */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md); /* Espaçamento entre as colunas */
+}
+
+/* Gera colunas de 1 a 12 */
+[class^="col-"] {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-1 { flex-basis: calc(100% / 12 * 1); max-width: calc(100% / 12 * 1); }
+.col-2 { flex-basis: calc(100% / 12 * 2); max-width: calc(100% / 12 * 2); }
+/* ... continue para col-3, col-4, etc. até col-12 ... */
+.col-12 { flex-basis: 100%; max-width: 100%; }
+
+/* Usando CSS Grid para a estrutura principal da PÁGINA */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Cabeçalho, conteúdo, rodapé */
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+footer {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-md) 0;
+}
+
+/* BREAKPOINTS */
+
+/* 1. Telas Grandes (acima de 1200px) - já é o nosso padrão */
+
+/* 2. Tablets (até 992px) */
+@media (max-width: 992px) {
+  .col-md-6 { flex-basis: 50%; max-width: 50%; }
+  /* Adicione essa classe nos seus cards no HTML: <div class="col-4 col-md-6"> */
+}
+
+/* 3. Celulares Grandes (até 768px) */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .col-sm-12 { flex-basis: 100%; max-width: 100%; }
+  /* Adicione essa classe nos cards: <div class="col-4 col-md-6 col-sm-12"> */
+
+  /* Menu Hamburguer */
+  header nav {
+    display: none; /* Esconde o menu principal */
+  }
+  .menu-hamburguer {
+    display: block; /* Mostra o botão */
+  }
+}
+
+/* 4. Celulares Pequenos (até 576px) */
+@media (max-width: 576px) {
+  .container { width: 95%; }
+}
+
+/* 5. Telas Extra Pequenas (opcional) */
+@media (max-width: 480px) {
+  body { font-size: 0.9rem; }
+}

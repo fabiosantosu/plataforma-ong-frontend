@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 5%;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+header nav a {
+  font-weight: bold;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+}
+
+.menu-hamburguer {
+  display: none; /* Escondido por padrão em telas grandes */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
