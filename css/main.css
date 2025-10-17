@@ -1,4 +1,4 @@
-/* css/main.css */
+/* css/main.css (CORRIGIDO) */
 
 /* 1. Variáveis (precisam vir primeiro) */
 @import url('_variables.css');
@@ -6,11 +6,11 @@
 /* 2. Base e Reset */
 @import url('_base.css');
 
-/* 3. Leiaute e Grid */
-@import url('_layout.css');
-
-/* 4. Componentes */
-@import url('_header.css');
+/* 3. Componentes (Estilos base dos elementos) */
+@import url('_header.css'); /* <--- MOVA PARA CIMA */
 @import url('_cards.css');
 @import url('_forms.css');
 @import url('_buttons.css');
+
+/* 4. Leiaute e Grid (Estrutura e Responsividade vêm por último para sobrescrever) */
+@import url('_layout.css'); 

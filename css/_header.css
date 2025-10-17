@@ -1,3 +1,5 @@
+/* css/_header.css (CORRIGIDO) */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -22,6 +24,7 @@ header nav a {
   text-transform: uppercase;
 }
 
+/* DEIXE APENAS ESTA REGRA PARA O MENU HAMBÚRGUER */
 .menu-hamburguer {
   display: none; /* Escondido por padrão em telas grandes */
   font-size: 2rem;
