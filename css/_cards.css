@@ -1,0 +1,21 @@
+.project-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+  transition: transform var(--transition-speed);
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: var(--spacing-md);
+}
+
+.card-content h2 {
+  margin-top: 0;
+}
+

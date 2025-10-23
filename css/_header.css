@@ -1,0 +1,52 @@
+header {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* A  classe .header-container controla o layout do conteúdo */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Usa o mesmo 'padding' do .container principal, mas sem as margens laterais */
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+
+  /* E usa as mesmas regras de largura e centralização do .container */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Regra de Desktop para a navegação */
+header nav {
+  display: block; /* Garante que a navegação seja visível no desktop */
+}
+
+/* Regra de Desktop para a lista de links */
+header nav ul {
+  display: flex;
+  flex-direction: row; /* Links lado a lado no desktop */
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+header nav a {
+  font-weight: bold;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+}
+
+/* Regra de Desktop para o menu hambúrguer */
+.menu-hamburguer {
+  display: none; /* Escondido no desktop */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+

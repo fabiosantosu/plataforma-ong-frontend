@@ -1,0 +1,54 @@
+/* BREAKPOINTS */
+
+/*  Tablets (até 992px) */
+@media (max-width: 992px) {
+  .col-md-6 { flex-basis: 50%; max-width: 50%; }
+}
+
+/*  Celulares Grandes (até 768px) */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .col-sm-12 { flex-basis: 100%; max-width: 100%; }
+
+  /* --- REGRAS DO MENU MÓVEL --- */
+  
+  /*  Esconde o menu de links por padrão no mobile */
+  header nav {
+    display: none; 
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /*  Mostra o menu quando o JS adiciona a classe .active */
+  header nav.active {
+    display: block;
+  }
+
+  /*  Empilha os links do menu quando ele está aberto */
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+  }
+
+  /* Mostra o botão hambúrguer no mobile */
+  .menu-hamburguer {
+    display: block;
+  }
+  /* --- FIM DAS REGRAS DO MENU --- */
+}
+
+/*  Celulares Pequenos (até 576px) */
+@media (max-width: 576px) {
+  .container { width: 95%; }
+}
+
+/*  Telas Extra Pequenas */
+@media (max-width: 480px) {
+  body { font-size: 0.9rem; }
+}
+

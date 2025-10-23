@@ -1,0 +1,35 @@
+:root {
+  /* Paleta de Cores (Mínimo 8) */
+  --color-primary: #0066cc;      /* Azul principal para botões e links */
+  --color-primary-dark: #0056b3; /* Azul mais escuro para hover */
+  --color-secondary: #28a745;    /* Verde para sucesso ou destaque */
+  --color-accent: #ffc107;       /* Amarelo para alertas ou badges */
+  --color-danger: #dc3545;       /* Vermelho para erros */
+
+  --color-neutral-dark: #343a40; /* Preto suave para texto principal */
+  --color-neutral-medium: #6c757d;/* Cinza para texto secundário */
+  --color-neutral-light: #f8f9fa; /* Cinza claro para fundos de seção */
+  --color-white: #ffffff;         /* Branco puro */
+
+  /* Tipografia (Mínimo 5 tamanhos) */
+  --font-family-base: 'Roboto', sans-serif; /* Importa do Google Fonts */
+  --font-size-h1: 2.5rem;   /* 40px */
+  --font-size-h2: 2rem;     /* 32px */
+  --font-size-h3: 1.5rem;   /* 24px */
+  --font-size-body: 1rem;   /* 16px */
+  --font-size-small: 0.875rem;/* 14px */
+  --line-height-base: 1.6;
+
+  /* Espaçamento Modular */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+
+  /* Outras variáveis de design */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s ease;
+}

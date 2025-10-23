@@ -1,0 +1,43 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 0;
+}
+
+/* Sistema de Grid de 12 Colunas com Flexbox */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md); /* Espaçamento entre as colunas */
+}
+
+/* Gera colunas de 1 a 12 */
+[class^="col-"] {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-1 { flex-basis: calc(100% / 12 * 1); max-width: calc(100% / 12 * 1); }
+.col-2 { flex-basis: calc(100% / 12 * 2); max-width: calc(100% / 12 * 2); }
+.col-12 { flex-basis: 100%; max-width: 100%; }
+
+/* Usando CSS Grid para a estrutura principal da PÁGINA */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Cabeçalho, conteúdo, rodapé */
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+footer {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-md) 0;
+}
+
