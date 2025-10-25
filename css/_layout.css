@@ -41,3 +41,7 @@ footer {
   padding: var(--spacing-md) 0;
 }
 
+/* Remove APENAS o padding superior do container principal da página inicial */
+.main-container-index {
+  padding-top: 0;
+}
