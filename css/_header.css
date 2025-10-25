@@ -13,8 +13,8 @@ header {
   align-items: center;
   
   /* Usa o mesmo 'padding' do .container principal, mas sem as margens laterais */
-  padding-top: var(--spacing-sm);
-  padding-bottom: var(--spacing-sm);
+  padding-top: 4px;
+  padding-bottom: 4px;
 
   /* E usa as mesmas regras de largura e centralização do .container */
   width: 90%;
