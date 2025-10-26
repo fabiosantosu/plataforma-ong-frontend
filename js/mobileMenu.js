@@ -17,4 +17,4 @@ export function initMobileMenu() {
       menuButton.textContent = '☰';
     }
   });
-}
+}       
