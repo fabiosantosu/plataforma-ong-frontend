@@ -60,3 +60,32 @@ input:required:invalid:not(:placeholder-shown) {
   background-color: #ffe8e8;
 }
 
+ /* --- ADIÇÕES PARA O DARK MODE --- */
+  background-color: var(--color-white); /* Vai usar #121212 no modo escuro */
+  color: var(--color-neutral-dark); /* Vai usar #f8f9fa no modo escuro */
+  border: 1px solid var(--color-neutral-medium); /* Borda cinza clara/escura */
+  /* --- FIM DAS ADIÇÕES --- */
+
+  border-radius: 4px;
+  font-size: var(--font-size-body);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+
+
+/* Validação Visual */
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Quando o campo é obrigatório e está VÁLIDO */
+input:required:valid {
+  border-color: var(--color-secondary);
+}
+
+/* Quando o campo é obrigatório e está INVÁLIDO após a interação */
+input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+  background-color: #ffe8e8;
+}
