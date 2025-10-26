@@ -43,3 +43,65 @@
   box-shadow: none;
 }
 
+form {
+  max-width: 700px; /* Define uma largura máxima para o formulário */
+  margin: var(--spacing-lg) auto; /* Centraliza o formulário na página */
+  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+
+legend {
+  font-weight: bold;
+  font-size: var(--font-size-h3);
+  color: var(--color-primary);
+  padding: 0 var(--spacing-xs);
+}
+
+label {
+  display: block; /* Faz a label ocupar uma linha inteira */
+  margin-bottom: var(--spacing-xs);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+
+
+   border-radius: 4px;
+  font-size: var(--font-size-body);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Validação Visual */
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Quando o campo é obrigatório e está VÁLIDO */
+input:required:valid {
+  border-color: var(--color-secondary);
+}
+
+/* Quando o campo é obrigatório e está INVÁLIDO após a interação */
+input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+  background-color: #ffe8e8;
+}
+
