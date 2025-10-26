@@ -34,6 +34,28 @@
   --transition-speed: 0.3s ease;
 }
 
+ /* MODO ESCURO (DARK MODE) */
+
+/* Ativado se o sistema operacional do usuário estiver em Modo Escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Paleta de Cores Modo Escuro */
+    
+    /* Azul principal MAIS CLARO para ter contraste no fundo escuro */
+    --color-primary: #3399ff; 
+    --color-primary-dark: #007bff; /* O azul antigo vira o 'hover' */
+
+    /* INVERTE TUDO: O que era escuro fica claro, o que era claro fica escuro */
+    --color-neutral-dark: #f8f9fa;   /* Texto principal (quase branco) */
+    --color-neutral-medium: #adb5bd; /* Texto secundário (cinza claro) */
+    --color-neutral-light: #1e1e1e;  /* Fundo de seções (cinza bem escuro) */
+    --color-white: #121212;          /* Fundo do body (preto suave) */
+    
+    /* Sombra para modo escuro (um "brilho" sutil) */
+    --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -202,6 +224,143 @@ header nav a {
 
 .card-content h2 {
   margin-top: 0;
+}
+
+form {
+  max-width: 700px; /* Define uma largura máxima para o formulário */
+  margin: var(--spacing-lg) auto; /* Centraliza o formulário na página */
+  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+
+legend {
+  font-weight: bold;
+  font-size: var(--font-size-h3);
+  color: var(--color-primary);
+  padding: 0 var(--spacing-xs);
+}
+
+label {
+  display: block; /* Faz a label ocupar uma linha inteira */
+  margin-bottom: var(--spacing-xs);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+
+
+   border-radius: 4px;
+  font-size: var(--font-size-body);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Validação Visual */
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Quando o campo é obrigatório e está VÁLIDO */
+input:required:valid {
+  border-color: var(--color-secondary);
+}
+
+/* Quando o campo é obrigatório e está INVÁLIDO após a interação */
+input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+  background-color: #ffe8e8;
+}
+
+ /* --- ADIÇÕES PARA O DARK MODE --- */
+  background-color: var(--color-white); /* Vai usar #121212 no modo escuro */
+  color: var(--color-neutral-dark); /* Vai usar #f8f9fa no modo escuro */
+  border: 1px solid var(--color-neutral-medium); /* Borda cinza clara/escura */
+  /* --- FIM DAS ADIÇÕES --- */
+
+  border-radius: 4px;
+  font-size: var(--font-size-body);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+
+
+/* Validação Visual */
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Quando o campo é obrigatório e está VÁLIDO */
+input:required:valid {
+  border-color: var(--color-secondary);
+}
+
+/* Quando o campo é obrigatório e está INVÁLIDO após a interação */
+input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+  background-color: #ffe8e8;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-body);
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
+}
+
+/* Estilo do botão primário (principal) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Estados Visuais do Botão Primário */
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--box-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Estado desabilitado */
+.btn:disabled {
+  background-color: var(--color-neutral-medium);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 form {
