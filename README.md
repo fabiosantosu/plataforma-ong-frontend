@@ -1,5 +1,7 @@
 # Plataforma Web para ONGs - Coração Solidário 
 
+**🚀 Veja o projeto ao vivo:** https://fabiosantosu.github.io/plataforma-ong-frontend/
+
 ![Badge](https://img.shields.io/badge/Status-Concluído-green?style=for-the-badge)
 ![Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -59,11 +61,11 @@ Este projeto foi construído do zero (`vanilla`) para demonstrar o domínio das 
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone https://github.com/fabiosantosu/BASEplataforma-ong-frontend.git
+    git clone https://github.com/fabiosantosu/plataforma-ong-frontend.git
     ```
 2.  **Navegar para a pasta:**
     ```bash
-    cd BASEplataforma-ong-frontend
+    cd plataforma-ong-frontend
     ```
 3.  **Abrir no navegador:**
     * Para uma visualização simples, abra o arquivo `index.html` diretamente no seu navegador.
