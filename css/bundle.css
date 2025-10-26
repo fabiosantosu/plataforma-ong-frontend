@@ -1,0 +1,322 @@
+:root {
+  /* Paleta de Cores (Mínimo 8) */
+  --color-primary: #0066cc;      /* Azul principal para botões e links */
+  --color-primary-dark: #0056b3; /* Azul mais escuro para hover */
+  --color-secondary: #28a745;    /* Verde para sucesso ou destaque */
+  --color-accent: #ffc107;       /* Amarelo para alertas ou badges */
+  --color-danger: #dc3545;       /* Vermelho para erros */
+
+  --color-neutral-dark: #343a40; /* Preto suave para texto principal */
+  --color-neutral-medium: #6c757d;/* Cinza para texto secundário */
+  --color-neutral-light: #f8f9fa; /* Cinza claro para fundos de seção */
+  --color-white: #ffffff;         /* Branco puro */
+
+  /* Tipografia (Mínimo 5 tamanhos) */
+  --font-family-base: 'Roboto', sans-serif; /* Importa do Google Fonts */
+  --font-size-h1: 2.5rem;   /* 40px */
+  --font-size-h2: 2rem;     /* 32px */
+  --font-size-h3: 1.5rem;   /* 24px */
+  --font-size-body: 1rem;   /* 16px */
+  --font-size-small: 0.875rem;/* 14px */
+  --line-height-base: 1.6;
+
+  /* Espaçamento Modular */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+
+  /* Outras variáveis de design */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-base);
+  color: var(--color-neutral-dark);
+  background-color: var(--color-white);
+}
+
+h1, h2, h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+
+a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}     
+
+/* Regra para imagens responsivas */
+img, picture {
+  max-width: 100%;
+  display: block; /* Remove espaços extras abaixo da imagem */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 0;
+}
+
+/* Sistema de Grid de 12 Colunas com Flexbox */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md); /* Espaçamento entre as colunas */
+}
+
+/* Gera colunas de 1 a 12 */
+[class^="col-"] {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-1 { flex-basis: calc(100% / 12 * 1); max-width: calc(100% / 12 * 1); }
+.col-2 { flex-basis: calc(100% / 12 * 2); max-width: calc(100% / 12 * 2); }
+.col-12 { flex-basis: 100%; max-width: 100%; }
+
+/* Usando CSS Grid para a estrutura principal da PÁGINA */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Cabeçalho, conteúdo, rodapé */
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+footer {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-md) 0;
+}
+
+/* Remove APENAS o padding superior do container principal da página inicial */
+.main-container-index {
+  padding-top: 0;
+}
+
+header {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+}
+
+/* A  classe .header-container controla o layout do conteúdo */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Usa o mesmo 'padding' do .container principal, mas sem as margens laterais */
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  /* E usa as mesmas regras de largura e centralização do .container */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Regra de Desktop para a navegação */
+header nav {
+  display: block; /* Garante que a navegação seja visível no desktop */
+}
+
+/* Regra de Desktop para a lista de links */
+header nav ul {
+  display: flex;
+  flex-direction: row; /* Links lado a lado no desktop */
+  list-style: none;
+  gap: var(--spacing-lg);
+}
+
+header nav a {
+  font-weight: bold;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+}
+
+/* Regra de Desktop para o menu hambúrguer */
+.menu-hamburguer {
+  display: none; /* Escondido no desktop */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.project-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+  transition: transform var(--transition-speed);
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: var(--spacing-md);
+}
+
+.card-content h2 {
+  margin-top: 0;
+}
+
+form {
+  max-width: 700px; /* Define uma largura máxima para o formulário */
+  margin: var(--spacing-lg) auto; /* Centraliza o formulário na página */
+  padding: var(--spacing-lg);
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius);
+}
+
+legend {
+  font-weight: bold;
+  font-size: var(--font-size-h3);
+  color: var(--color-primary);
+  padding: 0 var(--spacing-xs);
+}
+
+label {
+  display: block; /* Faz a label ocupar uma linha inteira */
+  margin-bottom: var(--spacing-xs);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+
+
+   border-radius: 4px;
+  font-size: var(--font-size-body);
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* Validação Visual */
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Quando o campo é obrigatório e está VÁLIDO */
+input:required:valid {
+  border-color: var(--color-secondary);
+}
+
+/* Quando o campo é obrigatório e está INVÁLIDO após a interação */
+input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-danger);
+  background-color: #ffe8e8;
+}
+
+/* BREAKPOINTS */
+
+/*  Tablets (até 992px) */
+@media (max-width: 992px) {
+  .col-md-6 { flex-basis: 50%; max-width: 50%; }
+}
+
+/*  Celulares Grandes (até 768px) */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .col-sm-12 { flex-basis: 100%; max-width: 100%; }
+
+  /* --- REGRAS DO MENU MÓVEL --- */
+  
+  /*  Esconde o menu de links por padrão no mobile */
+  header nav {
+    display: none; 
+    position: absolute;
+    top: 80px; 
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /*  Mostra o menu quando o JS adiciona a classe .active */
+  header nav.active {
+    display: block;
+  }
+
+  /*  Empilha os links do menu quando ele está aberto */
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+  }
+
+  /* Mostra o botão hambúrguer no mobile */
+  .menu-hamburguer {
+    display: block;
+  }
+  /* --- FIM DAS REGRAS DO MENU --- */
+}
+
+/*  Celulares Pequenos (até 576px) */
+@media (max-width: 576px) {
+  .container { width: 95%; }
+}
+
+/*  Telas Extra Pequenas */
+@media (max-width: 480px) {
+  body { font-size: 0.9rem; }
+}
+
