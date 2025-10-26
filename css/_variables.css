@@ -33,3 +33,25 @@
   --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --transition-speed: 0.3s ease;
 }
+
+ /* MODO ESCURO (DARK MODE) */
+
+/* Ativado se o sistema operacional do usuário estiver em Modo Escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Paleta de Cores Modo Escuro */
+    
+    /* Azul principal MAIS CLARO para ter contraste no fundo escuro */
+    --color-primary: #3399ff; 
+    --color-primary-dark: #007bff; /* O azul antigo vira o 'hover' */
+
+    /* INVERTE TUDO: O que era escuro fica claro, o que era claro fica escuro */
+    --color-neutral-dark: #f8f9fa;   /* Texto principal (quase branco) */
+    --color-neutral-medium: #adb5bd; /* Texto secundário (cinza claro) */
+    --color-neutral-light: #1e1e1e;  /* Fundo de seções (cinza bem escuro) */
+    --color-white: #121212;          /* Fundo do body (preto suave) */
+    
+    /* Sombra para modo escuro (um "brilho" sutil) */
+    --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+}
